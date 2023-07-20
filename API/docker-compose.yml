@@ -1,0 +1,32 @@
+﻿services:
+  postgres:
+    container_name: hrsprojectsdb
+    image: postgres
+    #env_file: /variables.env
+    environment:
+      - POSTGRES_USER=appuser
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=hrsprojects
+    restart: always  
+    ports:
+      - 5432:5432
+    volumes:
+      - hrs-projects-postgres-data:/data
+
+  hrs-projects:
+    image: grsse/hrs-projects:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #env_file: /variables.env
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Server=hrsprojectsdb;Port=5432;User Id=appuser;Password=secret;Database=hrsprojects
+    ports: 
+      - 8080:8080
+    depends_on:
+      - postgres
+    
+volumes:
+  hrs-projects-postgres-data:
