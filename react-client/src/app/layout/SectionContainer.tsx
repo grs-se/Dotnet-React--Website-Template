@@ -14,7 +14,7 @@ export default function SectionContainer({ sectionHeader, content, width = 'w-2/
 			{sectionHeader &&
 				<SectionHeader>{sectionHeader}</SectionHeader>
 			}
-			<div className={`${width} mx-auto py-10 mb-20 px-8`}>
+			<div className={`${width} mx-auto pt-10 pb-20 mb-20 px-8`}>
 				{content}
 			</div>
 		</div>

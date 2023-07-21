@@ -22,7 +22,7 @@ export default function ServicesOverview() {
 	}, []);
 
 	return (
-		<section className="grid grid-rows-2 grid-cols-3 w-full gap-8 h-[80vh]">
+		<section className="grid grid-rows-2 grid-cols-3 w-full gap-8 h-[660px]">
 			{services.map(service => (
 				<div key={service.id} className="relative">
 					<img className="object-cover h-full w-full filter brightness-100 hover:brightness-100" src={service.pictureUrl} />
