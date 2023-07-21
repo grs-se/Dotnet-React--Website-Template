@@ -2,7 +2,7 @@ import SectionContainer from "../../app/layout/SectionContainer";
 import BannerImage from "./BannerImage";
 //import DefaultCarousel from "./DefaultCarousel";
 import Hero from "./Hero";
-import Hero2 from "./Hero2";
+//import Hero2 from "./Hero2";
 import ServicesOverview from "./ServicesOverview";
 
 
