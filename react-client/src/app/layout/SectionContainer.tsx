@@ -11,10 +11,10 @@ export default function SectionContainer({ sectionHeader, content, width = 'w-2/
 
 	return (
 		<div className={`w-full bg-[#ececea] ${padding}`}>
-			<div className={`${width} mx-auto pt-16  mb-20 pb-16 px-8`}>
-				{sectionHeader &&
-					<SectionHeader>{sectionHeader}</SectionHeader>
-				}
+			{sectionHeader &&
+				<SectionHeader>{sectionHeader}</SectionHeader>
+			}
+			<div className={`${width} mx-auto py-10 mb-20 px-8`}>
 				{content}
 			</div>
 		</div>
