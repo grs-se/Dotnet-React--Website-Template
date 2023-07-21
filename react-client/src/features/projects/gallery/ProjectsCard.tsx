@@ -9,8 +9,8 @@ export default function ProjectCard({ project }: Props) {
 			<figure className="m-3 border rounded shadow-lg bg-white">
 				<img src={project.pictureUrl}></img>
 				<figcaption className="p-4">
-					{/*<dt>Project title:</dt>*/}
-					<dd className="font-bold"><em>{project.title}</em></dd>
+					{/*<dt>Project name:</dt>*/}
+					<dd className="font-bold"><em>{project.name}</em></dd>
 					{/*<dt>Description: </dt>*/}
 					{/*<dd>{project.description}</dd>*/}
 					<dt>Date: </dt>
