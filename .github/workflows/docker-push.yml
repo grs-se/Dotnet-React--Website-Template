@@ -24,9 +24,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - uses: actions/checkout@v3
       - name: Build the stack
+        run: docker-compose up -d
         with:
           context: "{{defaultContext}}:API"
-        run: docker-compose up -d
       - 
         name: Push image to Docker Hub
         uses: docker/build-push-action@v4
