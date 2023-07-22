@@ -10,7 +10,7 @@ COPY ./API/API.csproj ./API/API.csproj
 RUN dotnet restore "Projects.sln"
 
 # Copy the app folders over
-COPY ./API ./API
+COPY . .
 WORKDIR /app
 RUN dotnet publish -c Release -o out
 
