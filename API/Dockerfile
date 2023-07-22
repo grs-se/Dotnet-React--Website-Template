@@ -7,7 +7,7 @@ COPY API/API.csproj API/API.csproj
 RUN dotnet restore
 
 # copy everything else and build
-COPY API/
+COPY API API
 RUN dotnet publish -c Release -o out
 
 # build a runtime image
