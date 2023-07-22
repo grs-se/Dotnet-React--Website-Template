@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { observer } from 'mobx-react-lite';
 import PageHeader from "../../../app/components/PageHeader";
 import { useStore } from '../../../app/stores/store';

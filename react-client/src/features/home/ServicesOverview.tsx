@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import agent from "../../app/api/agent";
 import GridCard from "../../app/components/GridCard";
 import SectionContainer from "../../app/layout/SectionContainer";
-import { Project } from "../../app/models/project";
+import { useStore } from "../../app/stores/store";
+import { Service } from "../../app/models/service";
+import { observer } from "mobx-react-lite";
 //import { Service } from "../../app/models/service";
 //import { Service } from "../../app/models/service";
 
@@ -10,27 +10,19 @@ import { Project } from "../../app/models/project";
 //	service: Service;
 //}
 
-export default function ServicesOverview() {
-	const [services, setServices] = useState<Project[]>([]);
+export default observer(function ServicesOverview() {
+	const { serviceStore } = useStore();
 
-	useEffect(() => {
-		agent.Projects.list().then(response => {
-			const services: Project[] = [];
-			response.forEach(service => {
-				services.push(service);
-			});
-			setServices(services);
-		});
-	}, []);
+	const { services } = serviceStore;
 
 	return (
 		<SectionContainer sectionHeader={'Services'} width={'w-full'} padding={'px-20'} content={
-			<section className="grid grid-rows-2 grid-cols-3 w-full gap-8 h-[660px]">
-				{services.map(service => (
-					<GridCard id={service.id} src={service.pictureUrl} category={service.category} />
+			<section className="grid grid-rows-1 grid-cols-3 w-full gap-8 max-h-max">
+				{services.map((service: Service) => (
+					<GridCard id={service.id} src={service.pictureUrl} category={service.name} url={`services/${service.id}`} />
 				))
 				}
 			</section>
 		} />
 	);
-}
+})

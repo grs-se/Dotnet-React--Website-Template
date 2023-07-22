@@ -1,15 +1,20 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useStore } from "../../stores/store";
 
 //interface Props {
 //	isOpen: false;
 //}
 
 export default function Navbar3() {
+	const { serviceStore } = useStore();
+
+	const { services } = serviceStore;
+
 	const links = [
 		//{ text: 'Home', url: '/' },
 		{ text: 'Gallery', url: '/gallery' },
-		{ text: 'Services', url: '/services', children: [{ text: 'Conservation', url: '/services' }] },
+		//{ text: 'Services', url: '/services', children: [...services.map(service => { text: service.name})]},
 		{ text: 'About', url: '/about' },
 		{ text: 'Contact', url: '/contact' },
 	];
