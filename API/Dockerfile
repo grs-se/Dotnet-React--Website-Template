@@ -6,7 +6,7 @@ EXPOSE 8080
 COPY API/API.csproj API/API.csproj
 
 # Restore package deps
-RUN dotnet restore API.csproj
+RUN dotnet restore API/API.csproj
 
 # copy everything else and build
 COPY API API
