@@ -17,7 +17,7 @@
     image: grsse/hrs-projects:latest
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: API/Dockerfile
     #env_file: /variables.env
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
