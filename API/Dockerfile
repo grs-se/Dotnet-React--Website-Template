@@ -4,7 +4,7 @@ EXPOSE 8080
 
 # copy csproj and restore as distinct layers
 COPY "Projects.sln" "Projects.sln"
-COPY ./API/API.csproj ./API/API.csproj
+COPY "API/API.csproj" "API/API.csproj"
 
 # Restore package deps
 RUN dotnet restore "Projects.sln"
