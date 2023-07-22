@@ -10,6 +10,7 @@ RUN dotnet restore API/API.csproj
 
 # copy everything else and build
 COPY API API
+WORKDIR /app/API
 RUN dotnet publish -c Release -o out
 
 # build a runtime image
