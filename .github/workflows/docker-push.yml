@@ -26,7 +26,7 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
         with:
-          context: "{{defaultContext}}:API"
+          file: ./API/docker-compose
       - 
         name: Push image to Docker Hub
         uses: docker/build-push-action@v4
