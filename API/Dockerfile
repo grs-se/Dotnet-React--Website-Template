@@ -3,13 +3,13 @@ WORKDIR /app
 EXPOSE 8080
 
 # copy csproj and restore as distinct layers
-COPY API/API.csproj API/API.csproj
+COPY ./API/API.csproj ./API/API.csproj
 
 # Restore package deps
-RUN dotnet restore API/API.csproj
+RUN dotnet restore ./API/API.csproj
 
 # Copy the app folders over
-COPY API API
+COPY ./API ./API
 WORKDIR /app/API
 RUN dotnet publish -c Release -o out
 
