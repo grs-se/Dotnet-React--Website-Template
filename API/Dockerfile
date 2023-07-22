@@ -4,7 +4,9 @@ EXPOSE 8080
 
 # copy csproj and restore as distinct layers
 COPY API/API.csproj API/API.csproj
-RUN dotnet restore
+
+# Restore package deps
+RUN dotnet restore Projects.sln
 
 # copy everything else and build
 COPY API API
