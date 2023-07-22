@@ -9,7 +9,7 @@ export default function Navbar3() {
 	const links = [
 		//{ text: 'Home', url: '/' },
 		{ text: 'Gallery', url: '/gallery' },
-		{ text: 'Services', url: '/services', children: [{ text: 'Conservation', url: '/services/conservation' }] },
+		{ text: 'Services', url: '/services', children: [{ text: 'Conservation', url: '/services' }] },
 		{ text: 'About', url: '/about' },
 		{ text: 'Contact', url: '/contact' },
 	];
@@ -23,8 +23,10 @@ export default function Navbar3() {
 	return (
 		<nav className="bg-gray-100 border-gray-200 dark:bg-gray-900 dark:border-gray-700 border-b">
 			<div className="flex flex-wrap items-end justify-between mx-auto py-4 px-32 h-32">
-				<a href="#" className="flex items-center">
+
+				<a href="#" className="flex items-center h-full">
 					{/*<img src="" className="h-8 mr-3" alt="Flowbite Logo" />*/}
+					{/*<img className="h-full" src="/images/logo-cropped.jpg" alt="company logo" />*/}
 					<span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">HRS Gardens</span>
 				</a>
 				<button type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
