@@ -10,6 +10,7 @@ namespace API.RequestHelpers
         {
             CreateMap<CreateProjectDto, Project>();
             CreateMap<UpdateProjectDto, Project>();
+            CreateMap<CreateServiceDto, Service>();
         }
     }
 }

@@ -1,5 +1,4 @@
 using API.Entities;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +11,7 @@ namespace API.Data
         }
 
         public DbSet<Project> Projects { get; set; }
+        public DbSet<Service> Services { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -19,7 +19,7 @@ namespace API.Data
 
             builder.Entity<Role>()
                 .HasData(
-                    new Role {Id = 2, Name = "Admin", NormalizedName = "ADMIN" }
+                    new Role { Id = 2, Name = "Admin", NormalizedName = "ADMIN" }
                 );
         }
     }

@@ -32,7 +32,7 @@ namespace API.Data
                         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     PictureUrl = "/images/projects/Picture2.jpg",
                     Category = "Annual plant",
-                    Type = "Boards",
+                     Type = "Gardening",
                 },
                 new Project
                 {
@@ -40,7 +40,7 @@ namespace API.Data
                     Description = "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
                     PictureUrl = "/images/projects/Picture3.jpg",
                     Category = "Floriculture",
-                    Type = "Boards",
+                     Type = "Gardening",
                 },
                 new Project
                 {
@@ -49,7 +49,7 @@ namespace API.Data
                         "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
                     PictureUrl = "/images/projects/Picture4.jpg",
                     Category = "Community garden",
-                    Type = "Boards",
+                     Type = "Gardening",
                 },
                 new Project
                 {
@@ -58,7 +58,7 @@ namespace API.Data
                         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
                     PictureUrl = "/images/projects/Picture5.jpg",
                     Category = "Fern",
-                    Type = "Boards",
+                     Type = "Gardening",
                 },
                 //new Project
                 //{
@@ -67,7 +67,7 @@ namespace API.Data
                 //        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                 //    PictureUrl = "/images/projects/Picture6.jpg",
                 //    Category = "Flower beds",
-                //    Type = "Boards",
+                //    Type = "Gardening",
                 //},
                 new Project
                 {
@@ -76,7 +76,7 @@ namespace API.Data
                         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     PictureUrl = "/images/projects/Picture7.jpg",
                     Category = "Butterfly gardening",
-                    Type = "Boards",
+                    Type = "Gardening",
                 },
                 new Project
                 {
@@ -85,16 +85,16 @@ namespace API.Data
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     PictureUrl = "/images/projects/Picture8.jpg",
                     Category = "Botanical garden",
-                    Type = "Hats",
+               Type = "Gardening",
                 },
                 new Project
                 {
-                    Name = "Moss cultivating",
+                    Name = "Community garden",
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
-                    PictureUrl = "/images/projects/Picture9.jpg",
-                    Category = "Flower garden",
-                    Type = "Hats",
+                    PictureUrl = "/images/projects/Picture3.jpg",
+                    Category = "Community garden",
+                  Type = "Gardening",
                 },
             };
 
@@ -102,7 +102,39 @@ namespace API.Data
             {
                 context.Projects.Add(project);
             }
+            context.SaveChanges();
 
+            if (context.Services.Any()) return;
+
+            var services = new List<Service>
+            {
+                new Service
+                {
+                    Name = "Floral Gardening",
+                    Description =
+                        "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                    PictureUrl = "/images/projects/Picture9.jpg",
+                },
+                 new Service
+                {
+                    Name = "Botanical garden",
+                    Description =
+                        "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                    PictureUrl = "/images/projects/Picture7.jpg",
+                },
+                    new Service
+                {
+                    Name = "Community Garden",
+                    Description =
+                        "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                    PictureUrl = "/images/projects/Picture7.jpg",
+                },
+            };
+
+            foreach (var service in services)
+            {
+                context.Services.Add(service);
+            }
             context.SaveChanges();
         }
     }
