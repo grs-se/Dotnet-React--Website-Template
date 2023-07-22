@@ -1,10 +1,10 @@
-import Navbar2 from '../common/navigation/Navbar2';
 import { Outlet } from 'react-router-dom';
 import ContactBar from '../common/navigation/ContactBar';
-import Navbar3 from '../common/navigation/Navbar3';
-import Footer from '../common/navigation/Footer';
 //import Navbar from '../common/navigation/Navbar';
+//import Navbar2 from '../common/navigation/Navbar2';
+import Navbar3 from '../common/navigation/Navbar3';
 //import Navbar4 from '../common/navigation/Navbar4';
+import Footer from '../common/navigation/Footer';
 import { useStore } from '../stores/store';
 import { useEffect } from 'react';
 //import LoadingComponent from '../components/LoadingComponent';

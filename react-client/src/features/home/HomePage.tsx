@@ -1,4 +1,4 @@
-import AboutSection from "./AboutSection";
+//import AboutSection from "./AboutSection";
 import BannerImage from "./BannerImage";
 //import DefaultCarousel from "./DefaultCarousel";
 import Hero from "./Hero";
