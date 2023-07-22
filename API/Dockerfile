@@ -8,13 +8,13 @@ COPY API/API.csproj API/API.csproj
 # Restore package deps
 RUN dotnet restore API/API.csproj
 
-# copy everything else and build
+# Copy the app folders over
 COPY API API
 WORKDIR /app/API
 RUN dotnet publish -c Release -o out
 
-# build a runtime image
+# Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
-COPY --from=build-env /app/out .
+COPY --from=build-env /app/API/out .
 ENTRYPOINT ["dotnet", "API.dll"]
