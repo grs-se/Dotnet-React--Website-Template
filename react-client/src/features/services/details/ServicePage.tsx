@@ -19,8 +19,9 @@ export default observer(function ServiceDetails() {
 
 	return (
 		<SectionContainer sectionHeader={service.name} content={
-			<div className="grid">
-				<h1>{service.description}</h1>
+			<div className="grid grid-cols-6 gap-16">
+				<img className="col-span-3" src={service.pictureUrl} />
+				<h1 className="col-span-3 text-justify">{service.description}</h1>
 			</div>
 		} />);
-})
+});
