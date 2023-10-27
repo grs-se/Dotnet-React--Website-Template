@@ -122,7 +122,7 @@ namespace API.Data
                         "With many years experience we can advise and carry out the best way to achieve the results you want in the garden.  Weeding borders, maintaining lawns, pruning roses, strimming meadows, training fruit trees, propagating plants or designing borders. Our garden services may be a simple regular grass cut or a full garden maintenance visit. We tailor our visits to both the demands of the garden and the client, recommending the best way to achieve specific goals. As a team we are enthusiastic about plants – filling the garden with a vibrant display, letting the plants we want fill up the borders, lawns and shrubberies.",
                     PictureUrl = "/images/projects/Picture2.jpg",
                 },
-                    new Service
+                 new Service
                 {
                     Name = "Community Garden",
                     Description =

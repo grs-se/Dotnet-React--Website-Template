@@ -26,9 +26,9 @@ export default function Navbar3() {
 	return (
 		<nav className="bg-gray-100 border-gray-200 dark:bg-gray-900 dark:border-gray-700 border-b">
 			<div className="flex flex-wrap items-end justify-between mx-auto py-4 px-32 h-32">
-
 				<a href="#" className="flex items-center h-full">
 					{/*<img src="" className="h-8 mr-3" alt="Logo" />*/}
+					{/*<img src="/images/logo-white.png" className="h-10 mr-3" alt="Logo" />*/}
 					{/*<img className="h-full" src="/images/logo-cropped.jpg" alt="company logo" />*/}
 					<span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">HRS Gardens</span>
 				</a>
